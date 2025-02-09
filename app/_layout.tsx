@@ -1,24 +1,15 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
-import "react-native-reanimated";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import { ClerkProvider, ClerkLoaded } from "@clerk/clerk-expo";
+import { SplashScreen } from "expo-router";
+import { useFonts } from "expo-font";
+import { useEffect } from "react";
 import { tokenCache } from "@/cache/secure-store";
+import { InitialLayout } from "@/components/InitialLayout";
 
 SplashScreen.preventAutoHideAsync();
-const colorScheme = useColorScheme();
 
 export default function RootLayout() {
-  const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-  const [loaded] = useFonts({
+  const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
@@ -26,23 +17,21 @@ export default function RootLayout() {
     if (loaded) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [loaded, error]);
 
-  if (!loaded) {
+  if (!loaded && !error) {
     return null;
   }
+  const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
   if (!publishableKey) {
-    throw new Error("Add EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env");
+    throw new Error("Missing publishable key");
   }
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey!}>
-        <ClerkLoaded>
-          <Stack />;
-          {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} />*/}
-          <StatusBar style="auto" />
-        </ClerkLoaded>
-      </ClerkProvider>
-    </ThemeProvider>
+    <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
+      <ClerkLoaded>
+        <InitialLayout />
+        <StatusBar style="auto" />
+      </ClerkLoaded>
+    </ClerkProvider>
   );
 }
