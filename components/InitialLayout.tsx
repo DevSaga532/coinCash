@@ -15,7 +15,7 @@ export const InitialLayout = () => {
     if (isSignedIn) {
       if (!inTabsGroup) router.replace("/(tabs)");
     } else {
-      router.replace("/sign-in");
+      router.replace("/(auth)/sigin-in");
     }
   }, [isLoaded, isSignedIn]);
 
