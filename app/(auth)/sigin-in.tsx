@@ -1,15 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import GoogleSign from '@/components/GoogleSign'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import GoogleSign from "@/components/GoogleSign";
+import FacebookSign from "@/components/FacebookSign";
 
 const SignIn = () => {
   return (
     <View>
-     <GoogleSign />
+      <GoogleSign />
+      <FacebookSign />
     </View>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

@@ -1,7 +1,6 @@
 import React from "react";
 import * as WebBrowser from "expo-web-browser";
 import { Text, View, TouchableOpacity, Image } from "react-native";
-
 import * as Linking from "expo-linking";
 
 import icons from "@/constants/icons";
@@ -18,10 +17,10 @@ export const useWarmUpBrowser = () => {
 
 WebBrowser.maybeCompleteAuthSession();
 
-export default function GoogleSign() {
+export default function FacebookSign() {
   useWarmUpBrowser();
 
-  const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+  const { startOAuthFlow } = useOAuth({ strategy: "oauth_facebook" });
 
   const onPress = React.useCallback(async () => {
     try {
@@ -33,8 +32,7 @@ export default function GoogleSign() {
       if (createdSessionId) {
         setActive!({ session: createdSessionId });
       } else {
-        // Use signIn or signUp returned from startOAuthFlow
-        // for next steps, such as MFA
+        // Manejar signIn o signUp si es necesario
       }
     } catch (err) {
       console.error(JSON.stringify(err, null, 2));
@@ -46,16 +44,15 @@ export default function GoogleSign() {
       className="bg-white shadow-zinc-300 shadow-md rounded-full w-full py-4 mt-5"
       onPress={onPress}
     >
-      {/* Component  ae img source, alt, className, resizeMode, style */}
       <View className="flex flex-row items-center justify-center">
         <Image
-          source={icons.google}
-          alt="google"
+          source={icons.chat} // Asegúrate de que este ícono existe en tu archivo icons.js/ts
+          alt="facebook"
           className="w-5 h-5"
           resizeMode="contain"
         />
         <Text className="text-lg font-rubik text-black-300 ml-2">
-          Login With Google
+          Login With Facebook
         </Text>
       </View>
     </TouchableOpacity>
