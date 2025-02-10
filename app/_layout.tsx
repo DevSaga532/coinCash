@@ -5,6 +5,8 @@ import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import { tokenCache } from "@/cache/secure-store";
 import { InitialLayout } from "@/components/InitialLayout";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { StyleSheet } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -32,11 +34,13 @@ export default function RootLayout() {
     throw new Error("Missing publishable key");
   }
   return (
+   
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
       <ClerkLoaded>
         <InitialLayout />
         <StatusBar style="auto" />
       </ClerkLoaded>
     </ClerkProvider>
+   
   );
 }

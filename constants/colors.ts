@@ -2,11 +2,21 @@ const tintColorLight = "#0a7ea4";
 const tintColorDark = "#fff";
 
 export const Colors = {
+
+  cbBlue: "#FAB12F",
+  subtitle: "rgb(92, 98, 110)",
+  border: "rgb(223, 225, 226)",
+  positiveGreen: "rgb(11, 130, 82)", 
+  negativeRed: "rgb(204, 26, 46)",
+  segundarySubtitle: "rgb(79, 85, 102)",  
+
+
   background: "#19282F",
+  tabBarBg: "#4D4D4D",
+
   title: "#0AC18E",
   gray: "#4D4D4D",
   primary: "#0a7ea4",
-  secondary: "#9BA1A6",
   parrafo: "#687076",
 
   light: {
@@ -42,3 +52,4 @@ export const Fonts = {
   large: 18,
   extraLarge: 20,
 };
+
