@@ -1,5 +1,6 @@
 // constants/icons.js
 const icons = {
+  facebook: require('../assets/icons/facebook.png'),
   home: require('../assets/icons/home.png'),
   search: require('../assets/icons/search.png'),
   person: require('../assets/icons/person.png'),
