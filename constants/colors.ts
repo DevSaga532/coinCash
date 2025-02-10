@@ -13,7 +13,7 @@ export const Colors = {
 
   background: "#19282F",
   tabBarBg: "#4D4D4D",
-
+  secundario : "#4D4D4D",
   title: "#0AC18E",
   gray: "#4D4D4D",
   primary: "#0a7ea4",

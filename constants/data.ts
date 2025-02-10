@@ -9,7 +9,7 @@ export const cards = [
     price: "$100",
     rating: 4.8,
     category: "house",
-    image: images.newYork,
+    
   },
   {
     title: "Card 2",
@@ -17,7 +17,7 @@ export const cards = [
     price: "$200",
     rating: 3,
     category: "house",
-    image: images.japan,
+  
   },
   {
     title: "Card 3",
@@ -25,7 +25,7 @@ export const cards = [
     price: "$300",
     rating: 2,
     category: "flat",
-    image: images.newYork,
+    
   },
   {
     title: "Card 4",
@@ -33,7 +33,7 @@ export const cards = [
     price: "$400",
     rating: 5,
     category: "villa",
-    image: images.japan,
+    
   },
 ];
 
@@ -43,7 +43,7 @@ export const featuredCards = [
     location: "Location 1",
     price: "$100",
     rating: 4.8,
-    image: images.newYork,
+   
     category: "house",
   },
   {
@@ -51,7 +51,7 @@ export const featuredCards = [
     location: "Location 2",
     price: "$200",
     rating: 3,
-    image: images.japan,
+   
     category: "flat",
   },
 ];
@@ -141,26 +141,26 @@ export const facilities = [
 export const gallery = [
   {
     id: 1,
-    image: images.newYork,
+   
   },
   {
     id: 2,
-    image: images.japan,
+  
   },
   {
     id: 3,
-    image: images.newYork,
+   
   },
   {
     id: 4,
-    image: images.japan,
+    
   },
   {
     id: 5,
-    image: images.newYork,
+   
   },
   {
     id: 6,
-    image: images.japan,
+   
   },
 ];
