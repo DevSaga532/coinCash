@@ -4,11 +4,11 @@ const tintColorDark = "#fff";
 export const Colors = {
 
   cbBlue: "#FAB12F",
-  subtitle: "rgb(92, 98, 110)",
+  subtitle: "rgb(71, 72, 73)",
   border: "rgb(223, 225, 226)",
   positiveGreen: "rgb(11, 130, 82)", 
   negativeRed: "rgb(204, 26, 46)",
-  segundarySubtitle: "rgb(79, 85, 102)",  
+  segundarySubtitle: "hsla(0, 7.80%, 74.90%, 0.29)",  
 
 
   background: "#19282F",

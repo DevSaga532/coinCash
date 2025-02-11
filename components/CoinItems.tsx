@@ -1,12 +1,18 @@
 import { Colors } from "@/constants/colors";
 import { CoinGeckoTypes } from "@/types/coinGecko";
-import { Image, StyleSheet, Text, View } from "react-native";
+
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const CoinItems = ({ coin }: { coin: CoinGeckoTypes }) => {
+  const handlePress = () => {
+    console.log(`${coin.id} was pressed Description`);
+  };
   return (
     <View style={styles.containerItem}>
       <View style={styles.coinName}>
-        <Image source={{ uri: coin.image }} style={styles.img} />
+        <Pressable onPress={handlePress}>
+          <Image source={{ uri: coin.image }} style={styles.img} />
+        </Pressable>
         <View style={styles.containerName}>
           <Text style={styles.text}>{coin.name}</Text>
           <Text style={styles.symbol}>{coin.symbol}</Text>

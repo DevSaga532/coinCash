@@ -14,7 +14,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 const Home = () => {
   const [coins, setCoins] = useState<any>([]);
   const { user } = useUser();
-  const { responseJSON, isLoading, error } = useFetch(url.api);
+  const { responseJSON, isLoading } = useFetch(url.api);
   useEffect(() => {
     if (responseJSON) {
       setCoins(responseJSON);
